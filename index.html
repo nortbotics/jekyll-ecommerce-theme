@@ -1,5 +1,7 @@
 ---
 layout: base
+title: "Serious[ly] Fun Robot Kits"
+excerpt: "We create, share and sell robots, robot kits, and the things you can use to make your own robots."
 ---
 <div class="blog-cover" style="background-image:url(/images/{{ site.inc.cover_image }});">
     
@@ -21,34 +23,21 @@ layout: base
     </section>
 </div>
 
-
-<article class="container">
-{% for post in paginator.posts %}
-  {% unless post.draft %}
+<div class="container">
     <section class="index">
-        <!-- {% if post.author.image %}<img src="/images/{{ post.author.image }}" class="avatar">{% endif %}-->
-        <div>
-            <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
-            <p>{{ post.excerpt }}</p>
-            <div class="meta">
-                Written By <address>{{ post.author.name }}</address> &mdash;
-                <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>
-            </div>
+         <div>
+           <h2>Welcome</h2>
+           <p>
+Our mission is to bridge the gap in robotics education, and to provide resources to the underserved makers of the world who are more than beginners, but less than professionals.<br />
+        <ul>
+            <li><b>CREATE</b><br />We create & share open-source robotics projects.
+            </li><br />
+            <li><b>SHOP</b><br />We sell robotics kits, parts & accessories.
+            </li><br />
+            <li><b>LEARN</b><br />We write up tips & tricks, how-to's, and more on our blog.</li>
+        </ul></p><br />
+         <h3>>> <a href="/about/" style="color: #263c4c;">Learn more about us</a></h3>
         </div>
-        <hr>
+        <br />
     </section>
-    {% endunless %}
-    {% endfor %}
-    <section class="pagination" style="text-align:center">
-      {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-        <a href="/" class="btn btn-outline">‹ Newer</a>
-        {% else %}
-        <a href="/page{{ paginator.previous_page }}" class="btn btn-outline">‹ Newer</a>
-        {% endif %}
-      {% endif %}
-      {% if paginator.next_page %}
-        <a href="/page{{ paginator.next_page }}" class="btn btn-outline">Older ›</a>
-      {% endif %}
-    </section>
-</article>
+</div>

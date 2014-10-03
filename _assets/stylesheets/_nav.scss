@@ -1,5 +1,5 @@
 .site-nav {
-    background:#fff;
+    background:#777;
     height:80px;
     position:absolute;
     left:0;
@@ -16,9 +16,11 @@
     }
     
     .brand img {
-        height:40px;
+        height:60px;
         margin-right:10px;
-        margin-top:-2px;
+        margin-top:-10px;
+        left:0;
+        padding-bottom: 5px;
     }
     
     .dropdown {
@@ -26,30 +28,28 @@
     }
     
     nav {
-        padding:22px 30px;
+        padding:22px 10px;
         float:left;
         height:80px;
         display:table-cell;
     }
     
     #navigation {
-        padding-right:0;
-        
+        padding-right:10;
+        right:0;
+        font-family: $fontheadings;
         a {
-            border:0;
-            margin:0 0.9em;
-            display:inline-block;
-            
             &:hover {
-                color:$accent;
+                color:#000;
+                font-decoration: none;
             }
         }
         
         > a, .dropdown-toggle  {
-            color:#444;
+            color:#fff;
             border:0;
             font-weight:600;
-            font-size:15px;
+            font-size:1.25em;
             display:inline-block;
         }
         
@@ -68,6 +68,8 @@
         text-align:right;
         font-size:15px;
         font-weight:600;
+        color: #fff;
+            padding-top: 30px;
         
         span {
             line-height:0;

@@ -1,0 +1,77 @@
+---
+layout: base
+---
+{% if page.cover_image %}
+<div class="post-cover" style="background-image:url(/images/{{ page.cover_image }});"><section></section>
+</div>
+{% endif %}
+<article>
+    <div class="container">
+        <header>
+            <h1 class="product_name_h1" style="margin-bottom:0px;">{{ page.product_name }}</h1>
+        </header>
+        <section>
+            <img src="/images/{{ page.product_image }}" class="product_image">
+                         <p>
+                        <small>
+            <b>Product Type:</b> &nbsp; {{ page.product_type }}<br />
+            <b>Product Category:</b> &nbsp; <a href='{{ site.products.product_category[page.product_category] }}'>{{ page.product_category }}</a><br />
+            <b>Manufacturer:</b> &nbsp; {{ page.manufacturer }}
+            </small>
+            </p>
+            <p><b>Price:</b> <span class="product_price">{{ page.product_price }}</span></p>
+            <!-- ADD TO CART BUTTON -->
+            <p>
+                <form action="https://nortbotics.foxycart.com/cart" method="post">
+                    <input type="hidden" name="name" value='{{ page.product_name }}' />
+                    <input type="hidden" name="price" value='{{ page.product_price }}' />
+                    <input type="hidden" name="image" value='/images/{{ page.product_thumbnail }}'; />
+                    <input type="submit" value="Add To Cart" disabled />
+                </form>
+                <b><small style="color:white;background: red;">Out of Stock! Sorry!</small></b>
+            </p>
+            <p><b>Description:</b><br />{{ page.product_description }}</p>
+            <div style='clear:both'></div>
+            <h2>Comparison Sites</h2>
+                <!-- AMAZON -->
+                {% if page.price_compare.amazon %}
+                <iframe style="width:120px;height:240px;display:inline-block;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//{{ page.price_compare.amazon }}">
+                </iframe>
+                {% endif %}
+                {% if page.price_compare.ebay %}
+                <div style="border: 1px solid #ccc;width:600px;font-size:80%;"><div style="position:relative;color:#fff;border: 1px solid #ccc;"> &nbsp;<img src="/images/rnoe_small.jpg" style="margin-top:0px;padding-top:0px;margin-bottom:0px;padding-bottom:0px;"></div><div id="ebay_widget" style="margin-top:0px;padding-top:5px;"></div></div>
+                <script>
+                $('#ebay_widget').feeds({
+                    feeds: {
+                        feed: '{{ page.price_compare.ebay }}'
+                    }, // Set XML to true
+                    entryTemplate: '<!=content!>',
+                    max: 1
+                });
+                //$('#ebay_widget > table > tbody > tr').remove();
+                </script>
+                {% endif %}
+            {{ content }}
+        </section>
+        <footer>
+            <h2>Related Blogposts</h2>
+            {% for post in site.categories[page.product_category] %}
+                {% unless post.draft %}
+                <section class="index" style="margin-left:0px;">
+                    {% if post.image %}<a href="{{ post.url }}" rel="prefetch"><img src="/images/{{ post.image }}" class="blogpost-cap" data-lightbox="litearm"></a>{% endif %}
+                    <div class="blogpost">
+                        <h3 class="title black_text"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h3>
+                        <div class="meta">
+                            Written By <address>{{ post.author.name }}</address> &mdash;
+                            <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                        </div>
+                        <p>{{ post.excerpt }}<br />
+                        <small><a href="{{ post.url }}" rel="prefetch">Read more...</a></small></p>
+                    </div>
+                    <hr>
+                </section>
+                {% endunless %}
+            {% endfor %}
+        </footer>
+    </div>
+</article>

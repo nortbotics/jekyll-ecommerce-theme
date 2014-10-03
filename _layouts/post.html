@@ -2,7 +2,7 @@
 layout: base
 ---
 {% if page.cover_image %}
-<div class="article-cover">
+<div class="post-cover">
     <div>
         <img src="/images/{{ page.cover_image }}" class="image">
     </div>
@@ -12,15 +12,16 @@ layout: base
 
     <div class="container">
         <header>
-            <div class="meta">
+            <h1 class="title">{{ page.title }}</h1>
+            {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+                    <div class="meta">
                 By <address><a rel="author" href="{{ page.author.link }}" title="{{ page.author.name }}" target="_blank">{{ page.author.name }}</a></address> &mdash;
                 <time pubdate datetime="{{ page.date | date: "%Y-%d-%B" }}" title="{{ page.date | date: "%B %d, %Y" }}">{{ page.date | date: "%B %d, %Y" }}</time>
             </div>
-            <h1 class="title">{{ page.title }}</h1>
-            {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
         </header>
 
-        <section>
+        <section class="index">
+        {% if page.image %}<img src="/images/{{ page.image }}" class="post-cap">{% endif %}
             {{ content }}
             {% include _social.html %}
         </section>

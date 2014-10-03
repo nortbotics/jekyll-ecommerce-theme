@@ -1,0 +1,93 @@
+---
+layout: base
+title: Robot Blog
+---
+<style>
+.blog_title {
+	cursor: pointer;
+}
+</style>
+<div class="blog-cover" style="background-image:url(/images/{{ site.inc.cover_image }});height:160px;">
+    
+    <section style="padding-top:20px;padding-bottom:20px;">
+        <div class="container">
+            <h1 id="blog_title">Blog</h1>
+            <h3>Lessons Learned Building Robots</h3>
+        </div>
+    </section>
+</div>
+
+
+<article class="container">
+<!-- <div style="float: right; width: 300px; height: 100%;padding-left:20px;">
+<h3>Categories</h3>
+  <ul>
+  {% for category in site.categories %}
+    <li>{{ category | first }} - {{ category | last | size}}</li>
+  {% endfor %}
+  </ul>
+</div>
+-->
+<br /><h2 style="color:#000;padding-left:40px;">Recent Posts:</h2>
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+  {% else %}
+    <span>&laquo; Prev</span>
+  {% endif %}
+
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+      <em>{{ page }}</em>
+    {% elsif page == 1 %}
+      <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+    {% else %}
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+    {% endif %}
+  {% endfor %}
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+  {% else %}
+    <span>Next &raquo;</span>
+  {% endif %}
+</div>
+{% endif %}
+{% for post in paginator.posts %}
+  {% unless post.draft %}
+    <section class="index" style="padding-top:10px;padding-bottom:10px;">
+        {% if post.image %}<a href="{{ post.url }}" rel="prefetch"><img src="/images/{{ post.image }}" class="blogpost-cap"></a>{% endif %}
+        <div class="blogpost">
+            <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
+            <div class="meta">
+                Written By <address>{{ post.author.name }}</address> &mdash;
+                <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            </div>
+            <p>{{ post.excerpt }}<br />
+            <small><a href="{{ post.url }}" rel="prefetch">Read more...</a></small></p>
+        </div>
+        <hr>
+    </section>
+    {% endunless %}
+    {% endfor %}
+    <section class="pagination" style="text-align:center">
+      {% if paginator.previous_page %}
+        {% if paginator.previous_page == 1 %}
+        <a href="/" class="btn btn-outline">‹ Newer</a>
+        {% else %}
+        <a href="/page{{ paginator.previous_page }}" class="btn btn-outline">‹ Newer</a>
+        {% endif %}
+      {% endif %}
+      {% if paginator.next_page %}
+        <a href="/page{{ paginator.next_page }}" class="btn btn-outline">Older ›</a>
+      {% endif %}
+    </section>
+</article>
+<script>//<![CDATA[
+jQuery( document ).ready(function( $ ) {
+	$('#blog_title').click(function(){
+	   window.location.href = '/learn/';
+	});
+});
+//]]></script>

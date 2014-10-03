@@ -1,0 +1,30 @@
+---
+layout: base
+---
+{% if page.cover_image %}
+<div class="post-cover" style="background-image:url(/images/{{ page.cover_image }});"><section></section>
+</div>
+{% endif %}
+<article>
+    <div class="container">
+        <header>
+            <h1 class="title">{{ page.title }}</h1>
+            {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+        </header>
+
+        <section>
+            {{ content }}
+            {% include _social.html %}
+        </section>
+{% if page.author.image %}
+        <footer>
+            <address>
+               <img src="/images/{{ page.author.image }}">
+                <p>Written by <strong><a rel="author" href="https://twitter.com/{{ page.author.twitter }}" title="{{ page.author_name }}" target="_blank">{{ page.author.name }}</a></strong><br>
+                <span class="muted">{{ page.author.bio }}</span>
+                </p>
+            </address>
+        </footer>
+{% endif %}
+    </div>
+</article>

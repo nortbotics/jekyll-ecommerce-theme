@@ -2,48 +2,87 @@
 <html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.title %}{{ page.title }} &mdash; {{ site.inc.title }}{% else %}{{ site.inc.title }} &mdash; {{ site.inc.subtitle }}{% endif %}</title>
-    {% if site.inc.google_font %}<link href="https://fonts.googleapis.com/css?family={{ site.inc.google_font }}" rel="stylesheet" type="text/css">{% endif %}
+<title>
+{% if page.collection %}
+        {{ page.title }} | {{ page.collection | capitalize }} | {{ site.inc.company }}
+{% else %}
+        {{ page.title }} | {{ site.inc.company }}
+{% endif %}
+</title>
+    {% if site.inc.google_font %}<link href="//fonts.googleapis.com/css?family={{ site.inc.google_font }}" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>{% endif %}
     {% stylesheet main %}
+    <!-- FONT AWESOME -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="{{ site.url }}/js/lightbox.min.js"></script>
+    <script src="{{ site.url }}/js/jquery.feeds.min.js"></script>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/images/{{ site.inc.logo }}"/>
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+    <link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+    <link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <link href="{{ site_url }}/feed.xml" rel="alternate" type="application/rss+xml" title="{{ site.inc.title }}" />
-    <meta name="title" content="{% if page.title %}{{ page.title }} {% else %}{{ site.inc.title }}{% endif %}">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
-    {% if page.site.gplus %}<link rel="publisher" href="https://plus.google.com/{{ site.inc.gplus }}">{% endif %} 
-    {% if page.author.gplus %}<link rel="author" href="https://plus.google.com/{{ page.author.gplus }}">{% endif %}       
-    <meta property="og:title" content="{% if page.title %}{{ page.title }} {% else %}{{ site.inc.title }}{% endif %}"/>
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}"/>
-    {% if page.cover_image %}
-    <meta property="og:image" content="{{ site.url }}/images/{{ page.cover_image }}"/>
-    {% if page.main_image %}
-    <meta property="og:image" content="{{ site.url }}/images/{{ page.main_image }}"/>  
-    {% endif %}
-    <meta property="og:image" content="{{ site.url }}/images/{{ site.inc.logo }}"/>   
-    {% endif %}
     {% if page.excerpt %}
-    <meta property="og:description" content="{{ page.excerpt }}"/>
-    <meta name="description" content="{{ page.excerpt }}"/>
+        <meta name="description" content="{{ page.excerpt }}"/>
+    {% else %}
+        <! --fudge -->
     {% endif %}
-    <meta property="og:site_name" content="{{ site.inc.title }}">     
+    {% if page.site.gplus %}
+    <link rel="publisher" href="https://plus.google.com/{{ site.inc.gplus }}">{% endif %} 
+    {% if page.author.gplus %}
+    <link rel="author" href="https://plus.google.com/{{ page.author.gplus }}">{% endif %}
+    {% include _google-analytics.html %}    
 </head>
 <body>
-    
 <section class="site-nav">
+    <div class="black_bar"></div>
     <header>
         <nav id="navigation">
-            <a class="brand" href="/">
-                <img src="/images/{{ site.inc.logo }}" alt="Inc">
-            </a>
-            <a href="/" class="home">Blog</a>
-            {% if site.inc.product_link %}<a href="{{ site.inc.product_link }}">Product</a>{% endif %}
-            {% if site.inc.about_link %}<a href="{{ site.inc.about_link }}">About</a>{% endif %}
-        </nav>
-        {% if site.inc.tagline or site.inc.product_url %}<nav class="tagline">
-            {% if site.inc.tagline %}<span>{{ site.inc.tagline }}</span>{% endif %}
-            {% if site.inc.product_link %}<a href="{{ site.inc.product_link }}" class="btn btn-outline">Learn More</a>{% endif %}
-        </nav>{% endif %}
+        <a class="brand" href="/" style="text-decoration: none;color:#fff;"><img src="/images/{{ site.inc.logo }}" alt="Nortbortics Industries" style="margin-top:-4px;"><span id="ort" style="margin-left:-29px;font-size:1.2em;">ortbotics &nbsp; &nbsp;  &nbsp; &nbsp;</span>
+                </a>&nbsp; &nbsp; 
+                <span class="top_nav">
+                    <a href="/shop/">Shop</a>  &nbsp; &nbsp; &nbsp;   
+                    <a href="/projects/">Projects</a>  &nbsp; &nbsp; &nbsp;
+                    <a href="/blog/">Blog</a>
+                </span>
+            </nav>
+            <div class="minicart_super_simple">
+                <a href="https://nortbotics.foxycart.com/cart?cart=view">
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
+            </div>
+            <div class="minicart_wrapper"><small><span id="item_count">0 items</span>
+            <script>
+            var FC = FC || {};
+            FC.onLoad = function () {
+                FC.client.on('ready.done', function () {
+                    if (FC.json.item_count == 0) {
+                        document.getElementById('item_count').innerHTML = "<a href='https://nortbotics.foxycart.com/cart?cart=view'>0 items</a>";
+                    } else if (FC.json.item_count == 1) {
+                        document.getElementById('item_count').innerHTML = "<a href='https://nortbotics.foxycart.com/cart?cart=view'>1 item</a>";
+                    } else {
+                        document.getElementById('item_count').innerHTML = "<a href='https://nortbotics.foxycart.com/cart?cart=view'>" + FC.json.item_count + " items</a>";
+                    }
+                });
+            };
+            </script>
+                <a href="https://nortbotics.foxycart.com/cart?cart=view" class="pull-right"><i class="fa fa-shopping-cart fa-2x" style="padding-right:0px;margin-right:0px;"></i></a>
+            </small></div>
     </header>
 </section>
 
@@ -51,31 +90,47 @@
 
 <footer class="site-footer">
     <div class="container">
-        &copy; {{ site.time | date: "%Y" }} 
-        
-        <nav>
-            <a href="{{ site.inc.url }}">{{ site.inc.company }}</a> &middot;
-            <a href="/">Blog</a> &middot;
-            {% if site.inc.product_link %}<a href="{{ site.inc.product_link }}">Product</a> &middot; {% endif %}
-            {% if site.inc.about_link %}<a href="{{ site.inc.about_link }}">About</a>{% endif %}
+        <nav class="pull-left">
+            Quick Navigation
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/shop/">Shop</a></li> 
+                <li><a href="/projects/">Projects</a></li>
+                <li><a href="/blog/">Blog</a></li>
+            </ul>
+        </nav>
+        <nav style="margin-top:0px;padding-top:0px;">
+            Our Company
+            <ul>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
         </nav>
         
-        <nav class="social">
+        <nav class="social pull-right">
             {% if site.inc.twitter %}
-            <a href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+            <a href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter white"></i></a>
             {% endif %}
             {% if site.inc.facebook %}
-            <a href="http://facebook.com/{{ site.inc.facebook }}" title="Follow on Facebook" target="_blank"><i class="icon icon-facebook black"></i></a>
+            <a href="http://facebook.com/{{ site.inc.facebook }}" title="Follow on Facebook" target="_blank"><i class="icon icon-facebook white"></i></a>
             {% endif %}    
             <a href="/feed.xml" title="RSS Feed">
-                <i class="icon icon-rss black"></i>
+                <i class="icon icon-rss white"></i>
             </a>
-        </nav>
-        <p>Incorporated theme by <a href="https://sendtoinc.com">Inc</a></p>
+        </nav><a href="https://siliconshire.org/" target="_blank"><img src="/images/stamp_located_white.png" style="margin-top:-30px;" class="pull-right shire_badge"></a>
+        <br />
+        <div style='clear:both'></div>
+    </div>
+    <div class="container">
+    <br />
+        <p id="copyright_heading" style="text-align:center;">
+        &copy; {{ site.time | date: "%Y" }} <a href="{{ site.inc.url }}">{{ site.inc.company }}</a>
+        </p>
     </div>
 </footer>
-
 {% include _scripts.html %}
-
+<!-- FOXYCART -->
+<script src="//cdn.foxycart.com/nortbotics/loader.js" async defer></script>
+<!-- /FOXYCART -->
 </body>
 </html>

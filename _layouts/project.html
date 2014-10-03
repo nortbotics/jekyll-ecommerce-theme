@@ -1,0 +1,72 @@
+---
+layout: base
+---
+{% if page.cover_image %}
+<div class="post-cover" style="background-image:url(/images/{{ page.cover_image }});"><section></section>
+</div>
+{% endif %}
+<article>
+    <div class="container">
+        <header>
+            <h1 class="title">{{ page.project_title }}</h1>
+            {% if page.subtitle %}<h2 class="subtitle">{{ page.subtitle }}</h2>{% endif %}
+        </header>
+
+        <section>
+<img src="/images/{{ page.image }}" class="pull-left" style="padding-right: 20px;padding-top:0px;margin-top:0px;" data-lightbox="{{ page.project_category }}">
+<h2>Summary</h2>
+{{ page.project_summary }}
+<hr>
+<div style="clear:both;"></div>
+{{ content }}
+<hr>
+{% if site.categories[page.project_category].size > 0 %}<h2>Related Blogposts</h2>
+{% for post in site.categories[page.project_category] %}
+      {% unless post.draft %}
+    <section class="index" style="margin-left:0px;">
+        {% if post.image %}<a href="{{ post.url }}" rel="prefetch"><img src="/images/{{ post.image }}" class="blogpost-cap" data-lightbox="litearm"></a>{% endif %}
+        <div class="blogpost">
+            <h3 class="title black_text"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h3>
+            <div class="meta">
+                Written By <address>{{ post.author.name }}</address> &mdash;
+                <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>
+            </div>
+            <p>{{ post.excerpt }}<br />
+            <small><a href="{{ post.url }}" rel="prefetch">Read more...</a></small></p>
+        </div>
+        <hr>
+    </section>
+    {% endunless %}
+{% endfor %}
+{% endif %}
+{% if site.products.size > 0 %}
+    <h2>Related Products</h2>
+  {% for post in site.products %}
+    {% if post.product_category == page.project_category %}
+        <a href="{{ post.url }}" rel="prefetch"><div style="display: inline-block;margin-left: 10px; margin-right: 10px;">
+            
+                <img src="/images/{{ post.product_thumbnail }}" class="product-cap">
+                <div class="product_name_div">
+                    <h4 class="product_name">{{ post.product_name }}</h4>
+                </div>
+        </div>
+        </a>
+    {% endif %}
+{% endfor %}
+{% endif %}
+<div style="clear:both;"></div>
+<hr>
+            {% include _social.html %}
+        </section>
+{% if page.author.image %}
+        <footer>
+            <address>
+               <img src="/images/{{ page.author.image }}">
+                <p>Written by <strong><a rel="author" href="https://twitter.com/{{ page.author.twitter }}" title="{{ page.author_name }}" target="_blank">{{ page.author.name }}</a></strong><br>
+                <span class="muted">{{ page.author.bio }}</span>
+                </p>
+            </address>
+        </footer>
+{% endif %}
+    </div>
+</article>
