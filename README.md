@@ -1,7 +1,10 @@
-# Nortbotics
-This is the Nortbotics eCommerce site. Originally based off of 'Jekyll Incorporated', it has been highly customized and edited. I found that no other Jekyll users had tried to do eCommerce - so ended up figuring much of it out on my own. It's not anything special, just a lot of common sense I think. I have much more to do, but I think this is a good start - so why not opensource it and let others use it. 
+# 'NORTBOTICS' Jekyll eCommerce Theme
+This is the Jekyll theme I use for the NORTBOTICS eCommerce site. Originally based off of 'Jekyll Incorporated', it has been highly customized and edited. I found that no other Jekyll users had tried to do eCommerce - so ended up figuring much of it out on my own. It's not anything special, just a lot of common sense I think. I have much more to do, but I think this is a good start - so why not opensource it and let others use it. 
 
 See this theme being put to use at [Nortbotics.com](http://www.Nortbotics.com)
+
+## How do you do static eCommerce?
+  We use FoxyCart. So far so good.
 
 ## Installation & Usage
     bundle install
