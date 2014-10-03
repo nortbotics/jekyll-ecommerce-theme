@@ -25,7 +25,6 @@ _Note: when editing _config.yml, you need to restart jekyll to see the changes._
     
 ## Publish to Github Pages
 ... ran into some issues here with a plugin. Will try again soon.
-```
 
 
 ## Author
