@@ -34,7 +34,7 @@ layout: base
             <div style='clear:both'></div>
             {% assign compare_bool = page.price_compare.ebay || page.price_compare.amazon %}
             {%  if compare_bool %}
-                <h2>Comparison Sites<br /><small>affiliate links below</small></h2>
+                <h2>Comparison Sites<br /><small>affiliate links*</small></h2>
                     <!-- AMAZON -->
                     {% if page.price_compare.amazon %}
                         <iframe class="pull-left" style="width:120px;height:240px;display:inline-block;margin-right:10px;border: 1px solid #000;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//{{ page.price_compare.amazon }}">
@@ -58,10 +58,10 @@ layout: base
             {{ content }}
         </section>
         <footer>
-        {% assign related_count = site.categories[page.product_category].size %}
+        {% assign related_count = site.categories.[page.product_category].size %}
         {% if related_count > 0 %}
             <h2>Related Blogposts</h2>
-            {% for post in site.categories[page.product_category] %}
+            {% for post in site.categories.[page.product_category] %}
                 {% unless post.draft %}
                 <section class="index" style="margin-left:0px;">
                     {% if post.image %}<a href="{{ post.url }}" rel="prefetch"><img src="/images/{{ post.image }}" class="blogpost-cap" data-lightbox="litearm"></a>{% endif %}
@@ -74,11 +74,42 @@ layout: base
                         <p>{{ post.excerpt }}<br />
                         <small><a href="{{ post.url }}" rel="prefetch">Read more...</a></small></p>
                     </div>
-                    <hr>
                 </section>
                 {% endunless %}
             {% endfor %}
             {% endif %}
+                                <hr>
+            {% assign related_projects = site.projects.[page.product_category].size %}
+            {{ related_projects }}
+            {% if site.projects.size > 0 %}
+                <section class="index" style="margin-left:0px;">
+                <h2>Related Projects</h2><style>
+                .projects {
+    border-style: dashed;
+    border-width: 1px;
+        padding: 15px 15px 15px 15px;
+}</style>
+              {% for post in site.projects %}
+                {% if post.project_category == page.product_category %}
+                    <a href="{{ post.url }}" rel="prefetch"><div class="projects" style="display: inline-block;margin-left: 10px; margin-right: 10px;">
+                        
+                            <img src="/images/{{ post.image }}" class="blogpost-cap">
+                            <div class="blogpost">
+                        <h3 class="title black_text"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h3>
+                        <div class="meta">
+                            Written By <address>{{ post.author_name }}</address> &mdash;
+                            <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>
+                        </div>
+                        <p>{{ post.excerpt }}<br />
+                        <small><a href="{{ post.url }}" rel="prefetch">Read more...</a></small></p>
+                    </div>
+                    </div>
+                    </a>
+                {% endif %}
+            {% endfor %}
+            </section>
+            {% endif %}
+            <div style="clear:both;"></div>
         </footer>
     </div>
 </article>

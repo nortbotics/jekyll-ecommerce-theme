@@ -7,43 +7,26 @@ cover_image: blog-cover.jpg
 
 excerpt: "Active open-source robotics projects being worked on, blogged about, and sold, here at Nortbotics."
 ---
-<style>
-.project-hover {
-	cursor: pointer;
-	padding: 5px 5px 5px 5px;
-}
-.projects {
-    border-style: dashed;
-    border-width: 1px;
-    	padding: 15px 15px 15px 15px;
-}
-</style>
-<div id="litearm" class="projects"><h2>liteArm / uArm - Open Robotic Arm</h2>
-<p><img src="/images/litearm-i1-small.png" style="float:left;padding-right: 20px;padding-top:0px;margin-top:0px;">
-"Many hands make 'lite' work" goes the saying. That is the motto of the liteArm project, to create a common format robotic arm that can be used as a platform for the community to build off of. It was designed to be 3D Printable, and to run off of an arduino uno (plus shields).
-</p></div>
-<p> &nbsp; </p>
-<!--
-<br />
-<div id="2-wheeled-robot-arduino-uno" class="projects"><h2>Basic 2-wheeled robot w/ arduino uno</h2>
-<p>
-In this project I am creating a simple 2-wheeled robot using the arduino uno. I just want a basic, simple, mobile robot that can be used as a base, or platform, for later mobile robotics experiments.
-</p></div>
--->
-<script>//<![CDATA[
-jQuery( document ).ready(function( $ ) {
-	$('#2-wheeled-robot-arduino-uno').click(function(){
-	   window.location.href = '/blog/basic-2-wheeled-robot-arduino-uno/';
-	});
-	$('#litearm').click(function(){
-	   window.location.href = '/projects/litearm/';
-	});
-	$( ".projects" ).hover(
-	  function() {
-	    $( this ).addClass( "project-hover" );
-	  }, function() {
-	    $( this ).removeClass( "project-hover" );
-	  }
-	);
-});
-//]]></script>
+			 <section class="index" style="margin-left:0px;">
+			          <style>
+			                .projects {
+			    border-style: dashed;
+			    border-width: 1px;
+			        padding: 15px 15px 15px 15px;
+			}</style>
+              {% for project in site.projects %}
+                    <div class="projects" style="display: inline-block;margin-left: 10px; margin-right: 10px;">
+                        <a href="{{ project.url }}" rel="prefetch">
+                        	<img src="/images/{{ project.image }}" class="blogpost-cap">
+                        </a>
+                        <div class="blogpost">
+	                        <h1 class="title"><a href="{{ project.url }}" rel="prefetch">{{ project.title }}</a></h1>
+	                        <p>{{ project.excerpt }}<br />
+	                        <small><a href="{{ project.url }}" rel="prefetch">Read more...</a></small></p>
+                    	</div>
+                    </div>
+                    <br />
+            {% endfor %}
+            </section>
+            <div style="clear:both;"></div>
+            <br /><br />
