@@ -14,7 +14,14 @@
     .caret {
         opacity:0.2;
     }
-    
+    .brand {
+        a {
+        &hover {
+            border: none;
+            font-decoration:none;
+        }
+        }
+    }
     .brand img {
         height:60px;
         margin-right:10px;

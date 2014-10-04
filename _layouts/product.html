@@ -34,7 +34,7 @@ layout: base
             <div style='clear:both'></div>
             {% assign compare_bool = page.price_compare.ebay || page.price_compare.amazon %}
             {%  if compare_bool %}
-                <h2>Comparison Sites<br /><small>affiliate links*</small></h2>
+                <h2>Comparison Shopping<br /><small>affiliate links*</small></h2>
                     <!-- AMAZON -->
                     {% if page.price_compare.amazon %}
                         <iframe class="pull-left" style="width:120px;height:240px;display:inline-block;margin-right:10px;border: 1px solid #000;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//{{ page.price_compare.amazon }}">
@@ -47,7 +47,7 @@ layout: base
                             feeds: {
                                 feed: '{{ page.price_compare.ebay }}'
                             }, // Set XML to true
-                            entryTemplate: '<a href="<!=link!>" style="color:#000;"><!=content!></a>',
+                            entryTemplate: '<a href="<!=link!>" style="color:#000;"><span style="padding-left:5px;padding-right:5px;"><!=title!></span><!=content!></a>',
                             max: 1
                         });
                         //$('#ebay_widget > table > tbody > tr').remove();

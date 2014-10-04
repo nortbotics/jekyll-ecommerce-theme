@@ -24,6 +24,14 @@
         color: #ff;
     }
 }
+#home_button {
+    a {
+        &:hover {
+            font-decoration:none;
+            border:none;
+        }
+    }
+}
 body {
     margin:0;
     border:0;
