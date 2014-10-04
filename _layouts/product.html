@@ -47,7 +47,7 @@ layout: base
                             feeds: {
                                 feed: '{{ page.price_compare.ebay }}'
                             }, // Set XML to true
-                            entryTemplate: '<!=content!>',
+                            entryTemplate: '<a href="<!=link!>" style="color:#000;"><!=content!></a>',
                             max: 1
                         });
                         //$('#ebay_widget > table > tbody > tr').remove();
@@ -89,22 +89,20 @@ layout: base
     border-width: 1px;
         padding: 15px 15px 15px 15px;
 }</style>
-              {% for post in site.projects %}
-                {% if post.project_category == page.product_category %}
-                    <a href="{{ post.url }}" rel="prefetch"><div class="projects" style="display: inline-block;margin-left: 10px; margin-right: 10px;">
-                        
-                            <img src="/images/{{ post.image }}" class="blogpost-cap">
-                            <div class="blogpost">
-                        <h3 class="title black_text"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h3>
-                        <div class="meta">
-                            Written By <address>{{ post.author_name }}</address> &mdash;
-                            <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>
+              {% for project in site.projects %}
+                {% if project.tags contains page.product_category %}
+                    {% unless post.draft %}
+                    <div class="projects" style="display: inline-block;margin-left: 10px; margin-right: 10px;">
+                        <a href="{{ project.url }}" rel="prefetch">
+                            <img src="/images/{{ project.image }}" class="blogpost-cap">
+                        </a>
+                        <div class="blogpost">
+                            <h1 class="title"><a href="{{ project.url }}" rel="prefetch">{{ project.title }}</a></h1>
+                            <p>{{ project.excerpt }}<br />
+                            <small><a href="{{ project.url }}" rel="prefetch">Read more...</a></small></p>
                         </div>
-                        <p>{{ post.excerpt }}<br />
-                        <small><a href="{{ post.url }}" rel="prefetch">Read more...</a></small></p>
                     </div>
-                    </div>
-                    </a>
+                    {% endunless %}
                 {% endif %}
             {% endfor %}
             </section>

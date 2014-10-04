@@ -66,9 +66,11 @@ body {
     a {
         color: #fff;
         font-decoration: none;
+        opacity:0.7;
         &:hover {
             color: #fff;
             font-decoration: none;
+            opacity:1.0;
         }
     }
     overflow: hidden;
@@ -316,9 +318,8 @@ a {
             height:36px;
             border:2px solid rgba(0,0,0,1);
             display:inline-block;
-            padding:10px 0;
+            padding-top:10px;
             border-radius:42px;
-            margin:0 1em 0em 0;
             transition:0.2s all ease;
             line-height:0;
             text-align:center;
@@ -375,9 +376,8 @@ a {
             height:36px;
             border:2px solid white;
             display:inline-block;
-            padding:10px 0;
+            padding:5px 0;
             border-radius:42px;
-            margin:0 1em 0em 0;
             transition:0.2s all ease;
             line-height:0;
             text-align:center;
@@ -385,7 +385,7 @@ a {
 
             &:hover {
                 opacity:0.9;
-                color:#000;
+                color:#fff;
             }
         }
     }

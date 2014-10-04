@@ -40,8 +40,10 @@
         font-family: $fontheadings;
         a {
             &:hover {
-                color:#000;
-                font-decoration: none;
+                color:#fff;
+                text-decoration: none;
+                padding-bottom: 1px;
+                border-bottom: 4px solid white;
             }
         }
         

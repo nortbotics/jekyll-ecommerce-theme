@@ -15,6 +15,7 @@ excerpt: "Active open-source robotics projects being worked on, blogged about, a
 			        padding: 15px 15px 15px 15px;
 			}</style>
               {% for project in site.projects %}
+              {% unless project.draft %}
                     <div class="projects" style="display: inline-block;margin-left: 10px; margin-right: 10px;">
                         <a href="{{ project.url }}" rel="prefetch">
                         	<img src="/images/{{ project.image }}" class="blogpost-cap">
@@ -26,6 +27,7 @@ excerpt: "Active open-source robotics projects being worked on, blogged about, a
                     	</div>
                     </div>
                     <br />
+                    {% endunless %}
             {% endfor %}
             </section>
             <div style="clear:both;"></div>
