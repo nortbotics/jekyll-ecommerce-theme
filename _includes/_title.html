@@ -1,0 +1,7 @@
+<title>
+{% if page.collection %}
+        {{ page.title }} | {{ page.collection | capitalize }} | {{ site.inc.company }}
+{% else %}
+        {{ page.title }} | {{ site.inc.company }}
+{% endif %}
+</title>

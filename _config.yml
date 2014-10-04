@@ -11,15 +11,6 @@ inc:
   facebook:     false
   twitter:      nortbotics
   gplus:        104323171291289633724
-  about_link:   /about/
-  
-  #blog info
-  blog_link: /blog/
-  tagline:      "serious[ly fun] robotics"
-
-  # Product Information
-  product_link: /projects/
-  tagline:      "serious[ly fun] robotics"
   
   # Comments
   disqus:
@@ -39,6 +30,16 @@ inc:
   google_font: 'Armata:400,700'
   
   # Setup your fonts, colors etc at _assets/stylesheets/main.scss
+nav:
+  about_link:   /about/
+  contact_link: /contact/  
+  #store info
+  shop_link: /shop/
+  #blog info
+  blog_link: /blog/
+  # Product Information
+  projects_link: /projects/
+
 
 url:         http://www.nortbotics.com
 source:      .

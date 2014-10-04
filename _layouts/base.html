@@ -4,13 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="canonical" href="{{ site.url }}{{ page.url | replace:'index.html',''}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>
-{% if page.collection %}
-        {{ page.title }} | {{ page.collection | capitalize }} | {{ site.inc.company }}
-{% else %}
-        {{ page.title }} | {{ site.inc.company }}
-{% endif %}
-</title>
+    {% include _title.html %} 
     {% if site.inc.google_font %}<link href="//fonts.googleapis.com/css?family={{ site.inc.google_font }}" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>{% endif %}
     {% stylesheet main %}
@@ -37,11 +31,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-TileImage" content="/mstile-144x144.png">
     <link href="{{ site_url }}/feed.xml" rel="alternate" type="application/rss+xml" title="{{ site.inc.title }}" />
-    {% if page.excerpt %}
-        <meta name="description" content="{{ page.excerpt }}"/>
-    {% else %}
-        <! --fudge -->
-    {% endif %}
+    {% include _metadesc.html %} 
     {% if page.site.gplus %}
     <link rel="publisher" href="https://plus.google.com/{{ site.inc.gplus }}">{% endif %} 
     {% if page.author.gplus %}
@@ -56,9 +46,9 @@
         <a class="brand" href="/" style="text-decoration: none;color:#fff;"><img src="/images/{{ site.inc.logo }}" alt="Nortbortics Industries" style="margin-top:-4px;"><span id="ort" style="margin-left:-29px;font-size:1.2em;">ortbotics &nbsp; &nbsp;  &nbsp; &nbsp;</span>
                 </a>&nbsp; &nbsp; 
                 <span class="top_nav">
-                    <a href="/shop/">Shop</a>  &nbsp; &nbsp; &nbsp;   
-                    <a href="/projects/">Projects</a>  &nbsp; &nbsp; &nbsp;
-                    <a href="/blog/">Blog</a>
+                    <a href="{{ site.nav.shop_link }}">Shop</a>  &nbsp; &nbsp; &nbsp;   
+                    <a href="{{ site.nav.projects_link }}">Projects</a>  &nbsp; &nbsp; &nbsp;
+                    <a href="{{ site.nav.blog_link }}">Blog</a>
                 </span>
             </nav>
             <div class="minicart_super_simple">
@@ -94,16 +84,16 @@
             Quick Navigation
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/shop/">Shop</a></li> 
-                <li><a href="/projects/">Projects</a></li>
-                <li><a href="/blog/">Blog</a></li>
+                <li><a href="{{ site.nav.shop_link }}">Shop</a></li> 
+                <li><a href="{{ site.nav.projects_link }}">Projects</a></li>
+                <li><a href="{{ site.nav.blog_link }}">Blog</a></li>
             </ul>
         </nav>
         <nav style="margin-top:0px;padding-top:0px;">
             Our Company
             <ul>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/contact/">Contact</a></li>
+                <li><a href="{{ site.nav.about_link }}">About</a></li>
+                <li><a href="{{ site.nav.contact_link }}">Contact</a></li>
             </ul>
         </nav>
         

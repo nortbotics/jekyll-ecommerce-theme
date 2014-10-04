@@ -16,15 +16,17 @@ layout: base
             {{ content }}
             {% include _social.html %}
         </section>
-{% if page.author.image %}
         <footer>
             <address>
-               <img src="/images/{{ page.author.image }}">
-                <p>Written by <strong><a rel="author" href="https://twitter.com/{{ page.author.twitter }}" title="{{ page.author_name }}" target="_blank">{{ page.author.name }}</a></strong><br>
-                <span class="muted">{{ page.author.bio }}</span>
-                </p>
+            {% for author in site.data.authors %}
+                {% if author.name contains page.author_name %}
+                   <img src="/images/{{ author.image }}">
+                    <p>Written by <strong><a rel="author" href="{{ author.link }}" title="{{ author.name }}" target="_blank">{{ author.name }}</a></strong><br>
+                    <span class="muted">{{ author.bio }}</span>
+                    </p>
+                {% endif %}
+            {% endfor %}
             </address>
         </footer>
-{% endif %}
     </div>
 </article>

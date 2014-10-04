@@ -35,21 +35,21 @@ layout: base
             <h2>Comparison Sites</h2>
                 <!-- AMAZON -->
                 {% if page.price_compare.amazon %}
-                <iframe style="width:120px;height:240px;display:inline-block;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//{{ page.price_compare.amazon }}">
-                </iframe>
+                    <iframe style="width:120px;height:240px;display:inline-block;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//{{ page.price_compare.amazon }}">
+                    </iframe>
                 {% endif %}
                 {% if page.price_compare.ebay %}
-                <div style="border: 1px solid #ccc;width:600px;font-size:80%;"><div style="position:relative;color:#fff;border: 1px solid #ccc;"> &nbsp;<img src="/images/rnoe_small.jpg" style="margin-top:0px;padding-top:0px;margin-bottom:0px;padding-bottom:0px;"></div><div id="ebay_widget" style="margin-top:0px;padding-top:5px;"></div></div>
-                <script>
-                $('#ebay_widget').feeds({
-                    feeds: {
-                        feed: '{{ page.price_compare.ebay }}'
-                    }, // Set XML to true
-                    entryTemplate: '<!=content!>',
-                    max: 1
-                });
-                //$('#ebay_widget > table > tbody > tr').remove();
-                </script>
+                    <div style="border: 1px solid #ccc;width:600px;font-size:80%;"><div style="position:relative;color:#fff;border: 1px solid #ccc;"> &nbsp;<img src="/images/rnoe_small.jpg" style="margin-top:0px;padding-top:0px;margin-bottom:0px;padding-bottom:0px;"></div><div id="ebay_widget" style="margin-top:0px;padding-top:5px;"></div></div>
+                    <script>
+                    $('#ebay_widget').feeds({
+                        feeds: {
+                            feed: '{{ page.price_compare.ebay }}'
+                        }, // Set XML to true
+                        entryTemplate: '<!=content!>',
+                        max: 1
+                    });
+                    //$('#ebay_widget > table > tbody > tr').remove();
+                    </script>
                 {% endif %}
             {{ content }}
         </section>

@@ -8,12 +8,7 @@ excerpt: "If you've printed with PLA, my guess is you have also dealt with heat 
 category: "3D Printing"
 image: extruder-assembly.jpg
 
-author:
-  name: Joe Norton
-  twitter: joenorton
-  gplus: 104323171291289633724
-  bio: "Founder & Chief Dreamer"
-  image: jn.png
+author_name: Joe Norton
 ---  
 If you've printed with PLA, my guess is you have also dealt with heat creep and the extruder jams that come with it. If you are not familiar with the phrase 'heat creep' then you may want to read this post first - [common problems printing with PLA]({% post_url 2014-09-12-common-problems-3d-printing-with-pla %}).
 

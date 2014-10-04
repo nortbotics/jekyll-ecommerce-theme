@@ -8,12 +8,7 @@ excerpt: "This is an ongoing collection of lessons learned using PLA on 3D print
 category: "3D Printing"
 image: perils-of-pla.jpg
 
-author:
-  name: Joe Norton
-  twitter: joenorton
-  gplus: 104323171291289633724
-  bio: "Founder & Chief Dreamer"
-  image: jn.png
+author_name: Joe Norton
 ---  
 Having problems printing with PLA? I know I've had my fair share (and will continue to have them, I am sure). Right now, as of this writing, I'm about 2 weeks into ownership of a Lulzbot TAZ4 3D Printer. It's a great machine, but not without it's challenges. There are things I've had to take apart, things I've had to clean with potent chemicals, or seal with thread tape, and even standard parts of the TAZ4 that I had to replace with improved versions. Definitely not a 'set it and forget it' type of deal (but hey, that's to be expected on the bleeding edge right?).
 
