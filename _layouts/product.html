@@ -12,15 +12,9 @@ layout: base
         </header>
         <section>
             <img src="/images/{{ page.product_image }}" class="product_image">
-                         <p>
-                        <small>
-            <b>Product Type:</b> &nbsp; {{ page.product_type }}<br />
-            <b>Product Category:</b> &nbsp; <a href='{{ site.products.product_category[page.product_category] }}'>{{ page.product_category }}</a><br />
-            <b>Manufacturer:</b> &nbsp; {{ page.manufacturer }}
-            </small>
-            </p>
-            <p><b>Price:</b> <span class="product_price">{{ page.product_price }}</span></p>
-            <!-- ADD TO CART BUTTON -->
+            <p><b>Description:</b><br />{{ page.product_description }}</p>
+                        <p><b>Price:</b> <span class="product_price">{{ page.product_price }}</span></p>
+                        <!-- ADD TO CART BUTTON -->
             <p>
                 <form action="https://nortbotics.foxycart.com/cart" method="post">
                     <input type="hidden" name="name" value='{{ page.product_name }}' />
@@ -30,7 +24,13 @@ layout: base
                 </form>
                 <b><small style="color:white;background: red;">Out of Stock! Sorry!</small></b>
             </p>
-            <p><b>Description:</b><br />{{ page.product_description }}</p>
+                                     <p>
+                        <small>
+            <b>Product Type:</b> &nbsp; {{ page.product_type }}<br />
+            <b>Product Category:</b> &nbsp; <a href='{{ site.products.product_category[page.product_category] }}'>{{ page.product_category }}</a><br />
+            <b>Manufacturer:</b> &nbsp; {{ page.manufacturer }}
+            </small>
+            </p>
             <div style='clear:both'></div>
             <h2>Comparison Sites</h2>
                 <!-- AMAZON -->
