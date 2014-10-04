@@ -28,7 +28,7 @@ layout: base
         <div class="blogpost">
             <h3 class="title black_text"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h3>
             <div class="meta">
-                Written By <address>{{ post.author.name }}</address> &mdash;
+                Written By <address>{{ post.author_name }}</address> &mdash;
                 <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>
             </div>
             <p>{{ post.excerpt }}<br />

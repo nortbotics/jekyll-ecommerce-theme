@@ -9,12 +9,7 @@ category: arduino
 image: blog-cover.jpg
 image-small: blog-cover-small.jpg
 
-author:
-  name: Joe Norton
-  twitter: joenorton
-  gplus: 104323171291289633724
-  bio: Chief Robot Maker
-  image: jn.png
+author_name: Joe Norton
 ---  
 ###Mission:###  
 Create a simple 2 wheeled robot using the arduino uno
