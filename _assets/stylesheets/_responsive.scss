@@ -49,11 +49,33 @@
     .post-cover {
     height:80px;
     }
+    .product_main {
+        position:relative;
+        width:100%;
+        margin-right:0px;
+        font-size:1.3em;
+    }
+    .product_info {
+    background:#fff;
+    color:#000;
+    position:relative;
+    }
+    .product_info_heading {
+    padding-left:20px;
+    }
+    .product_details {
+    padding: 10px 5px 5px 10px;
+    }
+    .product_info_2 {
+        font-size:0.8em;
+        padding-top:5px;
+        padding-top:5px;
+    }
 }
 
 @media (max-width: 720px) {
     h1, h2 {
-    font-size: 1.3em;
+    font-size: 1.5em;
     }  
     .post-cap {
         float:left;

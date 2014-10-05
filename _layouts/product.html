@@ -5,61 +5,86 @@ layout: base
 <div class="post-cover" style="background-image:url(/images/{{ page.cover_image }});"><section></section>
 </div>
 {% endif %}
+<style>
+#add_button:hover {
+    border: 2px solid #fff;
+    color: #fff;
+    background: #404040;
+    padding: 5px 25px 5px 25px;
+}
+#add_button {
+    border: 2px solid #404040;
+    color: #404040;
+    background: #fff;
+    padding: 5px 25px 5px 25px;
+}
+</style>
 <article>
     <div class="container">
-        <header>
-            <h1 class="product_name_h1" style="margin-bottom:0px;">{{ page.product_name }}</h1>
-        </header>
-        <section>
-            <img src="/images/{{ page.product_image }}" class="product_image">
-            <p><b>Description:</b><br />{{ page.product_description }}</p>
-                        <p><b>Price:</b> <span class="product_price">{{ page.product_price }}</span></p>
-                        <!-- ADD TO CART BUTTON -->
-            <p>
-                <form action="https://nortbotics.foxycart.com/cart" method="post">
-                    <input type="hidden" name="name" value='{{ page.product_name }}' />
-                    <input type="hidden" name="price" value='{{ page.product_price }}' />
-                    <input type="hidden" name="image" value='/images/{{ page.product_thumbnail }}'; />
-                    <input type="submit" value="Add To Cart" disabled />
-                </form>
-                <b><small style="color:white;background: red;">Out of Stock! Sorry!</small></b>
-            </p>
-                                     <p>
+        <section id="product_section">
+            <img src="/images/{{ page.product_image }}" class="product_img">
+            <div class="product_main">
+                <h1 class="product_name_h1" style="margin-bottom:0px;">{{ page.product_name }}</h1>
+                <p><small style="color:#fff">{{ page.product_summary }}</small></p>
+                <p><b style="color:#D98218">Price:</b> <span style="color:#fff" class="product_price">${{ page.product_price }}</span></p>
+                <!-- ADD TO CART BUTTON -->
+                <p>
+                    <form action="https://nortbotics.foxycart.com/cart" method="post">
+                        <input type="hidden" name="name" value='{{ page.product_name }}' />
+                        <input type="hidden" name="price" value='{{ page.product_price }}' />
+                        <input type="hidden" name="image" value='/images/{{ page.product_thumbnail }}'; />
+                        <input id="add_button" type="submit" value="add  to  cart" disabled />
+                    </form>
+                    <b><small style="color:white;background: red;">Out of Stock! Sorry!</small></b>
+                </p>
+            </div>
+            <div style='clear:both'></div>
+            <div class="product_info">
+                <div class="product_info_heading"><h2>Product Info</h2>
+                </div>
+                <div class="product_details">{{ page.product_description }}
+                </div>
+            </div>
+                        <hr>
+            <div>
+            <div style="float:left;width:50%;">
+                <div class="product_info_heading"><h2>Features</h2>
+                </div>
+                <div class="product_details"><ul>
+                {% for each in page.product_features %}
+                    <li>{{ each }}</li>
+                {% endfor %}
+                </ul>
+                </div>
+            </div>
+            <div style="float:right;width:50%;">
+                <div class="product_info_heading"><h2>Included</h2>
+                </div>
+                <div class="product_details">
+                <ul>
+                {% for each in page.product_includes %}
+                    <li>{{ each }}</li>
+                {% endfor %}
+                </ul>
+                </div>
+            </div>
+                        <div style='clear:both'></div>
+            </div>
+
+                                    <!-- <p>
                         <small>
             <b>Product Type:</b> &nbsp; {{ page.product_type }}<br />
             <b>Product Category:</b> &nbsp; <a href='{{ site.products.product_category[page.product_category] }}'>{{ page.product_category }}</a><br />
             <b>Manufacturer:</b> &nbsp; {{ page.manufacturer }}
             </small>
-            </p>
-            <div style='clear:both'></div>
-            {% assign compare_bool = page.price_compare.ebay || page.price_compare.amazon %}
-            {%  if compare_bool %}
-                <h2>Comparison Shopping<br /><small>affiliate links*</small></h2>
-                    <!-- AMAZON -->
-                    {% if page.price_compare.amazon %}
-                        <iframe class="pull-left" style="width:120px;height:240px;display:inline-block;margin-right:10px;border: 1px solid #000;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//{{ page.price_compare.amazon }}">
-                        </iframe>
-                    {% endif %}
-                    {% if page.price_compare.ebay %}
-                        <div class="pull-left" style="border: 1px solid #000;width:510px;height:240px;font-size:80%;margin-top:0px;"><div style="position:relative;color:#fff;border: 1px solid #ccc;"> &nbsp;<img src="/images/rnoe_small.jpg" style="margin-top:0px;padding-top:0px;margin-bottom:0px;padding-bottom:0px;"></div><div id="ebay_widget" style="margin-top:0px;padding-top:5px;"></div></div>
-                        <script>
-                        $('#ebay_widget').feeds({
-                            feeds: {
-                                feed: '{{ page.price_compare.ebay }}'
-                            }, // Set XML to true
-                            entryTemplate: '<a href="<!=link!>" style="color:#000;"><div style="float:right;padding-left:5px;padding-right:5px;width:500px;height:20px;overflow:none;"><b><!=title!></b></div><!=content!></a>',
-                            max: 1
-                        });
-                        //$('#ebay_widget > table > tbody > tr').remove();
-                        </script>
-                    {% endif %}
-                    <div style='clear:both'></div>
-                {% endif %}
+            </p> -->
+            
             {{ content }}
         </section>
         <footer>
         {% assign related_count = site.categories.[page.product_category].size %}
         {% if related_count > 0 %}
+        <br />
             <h2>Related Blogposts</h2>
             {% for post in site.categories.[page.product_category] %}
                 {% unless post.draft %}
