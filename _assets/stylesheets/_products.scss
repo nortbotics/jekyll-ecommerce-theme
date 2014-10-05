@@ -12,6 +12,8 @@
 .product_img {
     float:left;
     margin-left:0px;
+    margin-top:0px;
+    padding-top:0px;
 }
 #product_section {
     margin-left:0px;
@@ -35,10 +37,14 @@
 }
 .product_info_heading {
     float:left;
-    text-align:right;
+    text-align:left;
     padding-right:20px;
     padding-left:130px;
     valign:middle;
+}
+.product_details_heading {
+    float:left;
+    text-align:left;
 }
 .product_details {
     float:left;

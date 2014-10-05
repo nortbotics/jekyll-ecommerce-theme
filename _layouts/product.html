@@ -26,7 +26,7 @@ layout: base
             <div class="product_main">
                 <h1 class="product_name_h1" style="margin-bottom:0px;">{{ page.product_name }}</h1>
                 <p><small style="color:#fff">{{ page.product_summary }}</small></p>
-                <p><b style="color:#D98218">Price:</b> <span style="color:#fff" class="product_price">${{ page.product_price }}</span></p>
+                <p><span style="color:#fff;font-size:120%;" class="product_price">${{ page.product_price }}</span></p>
                 <!-- ADD TO CART BUTTON -->
                 <p>
                     <form action="https://nortbotics.foxycart.com/cart" method="post">
@@ -40,27 +40,25 @@ layout: base
             </div>
             <div style='clear:both'></div>
             <div class="product_info">
-                <div class="product_info_heading"><h2>Product Info</h2>
+                <div class="product_info_heading"><h2>PRODUCT INFO</h2>
                 </div>
                 <div class="product_details">{{ page.product_description }}
                 </div>
             </div>
-                        <hr>
+            </section>
+            <section><hr>
             <div>
-            <div style="float:left;width:50%;">
-                <div class="product_info_heading"><h2>Features</h2>
-                </div>
-                <div class="product_details"><ul>
+            <div style="float:left;width:40%;">
+                <div class="product_details_heading"><h2>FEATURES</h2>
+                <ul>
                 {% for each in page.product_features %}
                     <li>{{ each }}</li>
                 {% endfor %}
                 </ul>
                 </div>
             </div>
-            <div style="float:right;width:50%;">
-                <div class="product_info_heading"><h2>Included</h2>
-                </div>
-                <div class="product_details">
+            <div style="float:right;width:40%;">
+                <div class="product_details_heading"><h2>INCLUDES</h2>
                 <ul>
                 {% for each in page.product_includes %}
                     <li>{{ each }}</li>
@@ -85,7 +83,7 @@ layout: base
         {% assign related_count = site.categories.[page.product_category].size %}
         {% if related_count > 0 %}
         <br />
-            <h2>Related Blogposts</h2>
+            <h2>RELATED BLOGPOSTS</h2>
             {% for post in site.categories.[page.product_category] %}
                 {% unless post.draft %}
                 <section class="index" style="margin-left:0px;">
@@ -108,7 +106,7 @@ layout: base
             {{ related_projects }}
             {% if site.projects.size > 0 %}
                 <section class="index" style="margin-left:0px;">
-                <h2>Related Projects</h2><style>
+                <h2>RELATED PROJECTS</h2><style>
                 .projects {
     border-style: dashed;
     border-width: 1px;
