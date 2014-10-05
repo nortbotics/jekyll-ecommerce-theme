@@ -57,7 +57,11 @@ title: Robot Blog
 {% for post in paginator.posts %}
   {% unless post.draft %}
     <section class="index" style="padding-top:10px;padding-bottom:10px;">
+       {% if post.gfycat %}
+              <a href="{{ post.url }}" rel="prefetch"><img class="gfyitem blogpost-cap" data-id="{{ post.gfycat_thumb }}" /></a>
+      {% else %}
         {% if post.image %}<a href="{{ post.url }}" rel="prefetch"><img src="/images/{{ post.image }}" class="blogpost-cap"></a>{% endif %}
+      {% endif %}
         <div class="blogpost">
             <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
             <div class="meta">

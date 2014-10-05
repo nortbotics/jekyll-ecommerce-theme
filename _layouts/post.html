@@ -26,7 +26,13 @@ layout: base
         </header>
 
         <section class="index">
-        {% if page.image %}<img src="/images/{{ page.image }}" class="post-cap">{% endif %}
+        {% if page.gfycat %}
+                <img class="gfyitem" style="float:right;padding-left:10px;" data-id="{{ page.gfycat }}" />
+        {% else %}
+            {% if page.image %}
+                <img src="/images/{{ page.image }}" class="post-cap">
+            {% endif %}
+        {% endif %}
             {{ content }}
             {% include _social.html %}
         </section>
