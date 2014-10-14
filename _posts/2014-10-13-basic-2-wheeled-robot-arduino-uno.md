@@ -36,6 +36,8 @@ This part really depends on your robot body. Essentially, here are the steps tak
 4. Plug in servos - into pins 9 and 10 - on the sensor shield.
 5. Marvel at your cute little robot.
 
+The last step here is actually plugging in the power. To do this, just plug the black wire coming off the battery into one of the GRND pins on the Sensor Shield, and put the red wire into the VIN pin on the sensor shield. This will turn ON the robot, so you will maybe want to work a switch in there to make it easier for you - but I'm leaving it out here for simplicity.
+
 ##Upload some code##
 
 Here is some xample code for running simple differential drive on the arduino. All we are doing is declaring 2 servos, attached to pins 9 & 10, and then sending them difference coordinated sets of pulses depend on which way we want the wheels to turn.  
