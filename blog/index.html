@@ -60,7 +60,11 @@ title: Robot Blog
        {% if post.gfycat %}
               <a href="{{ post.url }}" rel="prefetch"><img class="gfyitem blogpost-cap" data-id="{{ post.gfycat_thumb }}" /></a>
       {% else %}
-        {% if post.image %}<a href="{{ post.url }}" rel="prefetch"><img src="/images/{{ post.image }}" class="blogpost-cap"></a>{% endif %}
+        {% if post.image %}<a href="{{ post.url }}" rel="prefetch"><img src="/images/{{ post.image }}" class="blogpost-cap"></a>
+        {% else %}
+          {% if post.image_thumbnail %}<a href="{{ post.url }}" rel="prefetch"><img src="/images/{{ post.image_thumbnail }}" class="blogpost-cap"></a>{% endif %}
+        {% endif %}
+
       {% endif %}
         <div class="blogpost">
             <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>

@@ -20,4 +20,4 @@ If you are planning on printing your own set of parts for the litearm kit then y
 > 1. Some of the parts are going to take a long time to print. A long time.  
 For example, the first part I printed was the improved i2 base, labeled part #1. That single piece took nearly 6 hours to print. That was the most time intensive piece. Most pieces can be printed in or around an hour or 2. (Assuming moderate speed and layer height)
 
->2. Some of the parts are 
+>2. Some of the parts are import
