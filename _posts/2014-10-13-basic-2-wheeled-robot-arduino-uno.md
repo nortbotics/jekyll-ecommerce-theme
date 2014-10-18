@@ -1,8 +1,8 @@
 ---
 layout: post
 
-title: "Make Your Own Basic Arduino Robot - part 1"
-subtitle: "simple mobile robot platform, using differential drive"
+title: "Make Your Own Basic 2-Wheeled Robot"
+subtitle: "simple mobile robot, using an Arduino Uno"
 cover_image: blog-cover.jpg
 excerpt: "In this project I am creating a simple 2-wheeled robot using the arduino uno. I just want a basic, simple, mobile robot that can be used as a base, or platform, for later mobile robotics experiments."
 category: arduino
@@ -15,7 +15,7 @@ In this project I am creating a mobile robot platform that can be used as a test
 
 ###Parts:###
 *  Arduino Uno
-*  Sensor Shield
+*  Sensor Shield  
 *  2 Continuous Rotation Servos (Parallax)
 *  2 Wheels (Parallax)
 *  9 volt battery
@@ -23,10 +23,12 @@ In this project I am creating a mobile robot platform that can be used as a test
 
 This is an extremely simple project. The tricky part is sourcing an adequate 'robot body'. You can make your own at home, out of cardboard, or other common materials. I have done that, and it's okay as well.
 
-I decided to 3D print my robot body here for this project. I found a nice 'small mobile robot' model on Thingiverse and made that. I am working on a modified version, with advanced functionality and additional parts (codenamed 'Mini-Mo'). But anywho, <a href="http://www.thingiverse.com/thing:207522">here is the 3D model I printed</a> for my small mobile robot.
+I decided to 3D print my robot body here for this project. I found a nice 'small mobile robot' model on Thingiverse and made that. Side-note: I am working on a modified version, with advanced functionality and additional parts (codenamed 'Mini-Mo').  
 
-Here is how my 3D printed body came out  
-<img src="/images/small-mobile-robot-body.jpg">
+<a href="http://www.thingiverse.com/thing:207522">Here is the 3D model on Thingiverse</a>  
+
+Here is how my 3D printed body came out. Not perfect, but it will do.    
+<img src="/images/small-mobile-robot-body.jpg">  
 
 ##Put it together##
 This part really depends on your robot body. Essentially, here are the steps taking place:

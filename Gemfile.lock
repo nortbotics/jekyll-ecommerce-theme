@@ -141,6 +141,7 @@ DEPENDENCIES
   github-pages
   jekyll
   jekyll-assets
+  jemoji
   kramdown
   rake
   sass

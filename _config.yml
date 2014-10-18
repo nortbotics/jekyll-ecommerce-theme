@@ -141,3 +141,5 @@ collections:
     paginate_path: "projects/page:num"
     paginate: 10
 #
+gems:
+  - jemoji
