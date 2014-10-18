@@ -1,0 +1,59 @@
+---
+layout: post
+
+title: "Building the LiteArm i1 robot arm"
+subtitle: "My experience, and lessons learned, building the LiteArm i1"
+cover_image: blog-cover.jpg
+excerpt: "This is part 1 in the LiteArm i1 series. Here I discuss lessons learned 3D printing, and then constructing, the liteArm i1 robot arm."
+category: litearm
+image: litearm-i1-constructed.jpg
+
+author_name: Joe Norton
+---  
+<p>I just recently finished putting together my LiteArm i1 robot arm, so I wanted to go ahead and write a little bit about my experience building it, because there may be some things that others take away from it. The construction was most definitely successful, but that doesn't mean there weren't some useful lessons learned.</p>
+
+<p>If you are not familiar with the LiteArm then you should start with <a href="{{ site.url }}{{ site.nav.projects_link }}litearm" target="_blank">this project page</a>. Essentially, the LiteArm is an open-source, desktop sized robotic arm that you can make on your own at home (if you have the tools, determination, and the patience :smile: )</p>
+
+<p>So, back to the pont of this post. Below is my experience printing and constructing the LiteArm i1 robot arm.</p>
+
+<h2>Step 1: Printing the LiteArm</h2>
+<a href="https://www.flickr.com/photos/126939770@N02/15354262437" title="litearm-i1-parts-9 by Joe Norton, on Flickr"><img src="https://farm4.staticflickr.com/3941/15354262437_c3f3e6386c.jpg" width="500" height="375" alt="litearm-i1-parts-9" style="float:right;top:0px;margin-top:0px;padding-top:0px;padding-left:10px;"></a>
+
+The printing of the parts was straightforward as it gets. You can find the <a href="http://www.thingiverse.com/thing:407800" target="_blank">STL files on Thingaverse</a>. From there you just need to use a program to create GCODE from the STL file. I use <a href="http://slic3r.org/" target="_blank">SLICER</a> and highly recommend it.<br /><br />
+
+<p><i>Lessons learned 3D printing the LiteArm i1</i></p>
+
+<ul><li>1. <b>Some of the parts are going to take a long time to print.</b> A long time.For example, the first part I printed was the improved i2 base, labeled part #1. That single piece took nearly 6 hours to print. That was the most time intensive piece. Most pieces can be printed in or around an hour or 2 (Assuming moderate speed and layer height). For me, this long print time became an issue because I am using PLA - and sometimes, without adequate ventilation, [heat creep can strike]({% post_url 2014-09-12-common-problems-3d-printing-with-pla %}). I had to make sure my printer was adequately equipped to print these longer print times.</li>
+
+<li>2. <b>Some of the parts are important structurally</b>; there are many  of the 'linkages' in this palletizing arm design. Make sure they have a good infill. I re-printed several parts for this reason, going from 40% infill to 60% produced pieces that felt more firm.</li>
+
+<li>3. <b>There are 24 labeled parts. Be prepared to spend a lot of time printing.</b> For me, this took about a week of part-time printing to print the whole design.</li></ul>
+
+<h2>Step 2: Sourcing Your Non-Printable Parts</h2>
+
+I used the <a href="http://www.thingiverse.com/download:700258" target="_blank">ebay parts list</a> to help find the right parts. 
+Note: You do not need the USB host shield if you are not doing 'mouse control' stuff from the uArm software. Similarly, the 'power supply and voltmeter' is not required if you have a suitable power supply substitute.<br /><br />
+
+<p><i>Lessons learned sourcing parts for the LiteArm i1</i></p>
+
+To simplify things, I choose to only use 3 different screw lengths. I went with M4 screws of 8mm, 16mm, and 30mm in length. This worked out fine. I never needed anything longer than 30mm. HOWEVER, I probably could've used a 24mm in some spots where I ended up using a 30, and I probably could've used a 12 in some spots where I had used a 16. Just saying.<br /><br />
+
+<h2>Step 3: Putting It Together</h2>
+
+I used the <a href="http://www.thingiverse.com/download:700212" target="_blank">uArm assembly instructions</a> as my rough guide for construction here. Some of the parts are not the same, but many are.<br /><br />
+
+<p><i>Lessons learned constructing the LiteArm i1</i></p>
+
+<ul><li>1. <b>The main servo joint is a bit tricky</b>. I was unsure of how to the connect the whole thing. There are several pieces lined up there with a pretty large hole, and I did not recall seeing anything in the parts list I had seen about a piece here. I ended up using a combination of screws and standoffs to fasten this joint together; HOWEVER I later learned from <a href="https://www.youtube.com/watch?v=CIDIh0i9T1A" target="_blank">a video Lance from Armatec made</a> that he had used a 1/4 inch aluminum tubing in that area to stabilize the joint. I think that sounds much better than what I did, so in future versions I will definitely use some kind of tubing or rod in that main joint.</li>
+
+<li>2. <b>I had a difficult time getting the 'turntable' bearing and the assembly around that (which includes your 'hip' servo horn) seated properly to the base piece.</b> It works and is functional, but something seems off about it. Part of me thinks it is just because I don't have the suction cups attached to the base piece, so when the base is resting on a flat surface it is actually being balanced on the 3 nuts protruding out from the bottom. They won't be an issue if there was a suction cup providing alittle clearance. The other part of me thinks that I put something together incorrectly.</li>
+</ul>
+
+<h2>THE FINISHED PRODUCT</h2>
+<div>
+<a href="https://www.flickr.com/photos/126939770@N02/15540243615" title="litearm-i1-front-craned2 by Joe Norton, on Flickr"><img src="https://farm4.staticflickr.com/3951/15540243615_981b8d4707.jpg" width="450" height="375" alt="litearm-i1-front-craned2" style="float:left;"></a> &nbsp; &nbsp;
+<a href="https://www.flickr.com/photos/126939770@N02/15354228117" title="litearm-i1-back-angle by Joe Norton, on Flickr"><img src="https://farm4.staticflickr.com/3955/15354228117_f0dceb8f4a.jpg" width="450" height="375" alt="litearm-i1-back-angle" style="float:right;"></a>
+<div style="clear:both;"></div>
+</div>
+Here is the <a href="https://www.flickr.com/photos/126939770@N02/sets/72157646442338034/" target="_blank">Flickr album</a>, with a few more shots.
+<br /><br /><br /><h2>The END</h2>
