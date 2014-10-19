@@ -48,13 +48,23 @@ layout: base
                 {% endif %}
             {% endfor %}
             </address>
-
+            <hr>
+                        <small>
+                <h2>MORE BLOGPOSTS</h2>
+                <ul>
+                {% for each in site.related_posts limit:3 %}
+                    {% unless each.draft %}
+                    <li><a href="{{ each.url }}">{{ each.title }}</a></li>
+                    {% endunless %}
+                {% endfor %}
+                </ul>
+            </small>
         </footer>
-
         {% if site.inc.disqus.shortname %}
         <section>
             {% include _disqus.html %}
         </section>
         {% endif %}
+
     </div>
 </article>
