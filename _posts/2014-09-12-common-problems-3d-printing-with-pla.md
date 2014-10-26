@@ -2,7 +2,7 @@
 layout: post
 
 title: Common problems 3D printing with PLA
-subtitle: "lessons learned printing with PLA"
+subtitle: "problems with heat creep & pooling"
 cover_image: blog-cover.jpg
 excerpt: "This is an ongoing collection of lessons learned using PLA on 3D printers (specifically, the Lulzbot TAZ4). Hopefully my befuddlement, and eventual solutions, to some of the most common issues such as Heat Creep, Extruder Clogging, and Filament Leaking/Pooling will benefit others."
 category: "3D Printing"
@@ -23,7 +23,7 @@ PLA has a lower melting temperature than ABS, and also has a higher viscosity wh
 
 This all seems like random trivia, but what it means is that PLA is much more prone to 2 major issues:
 
-1. __Filament Pooling / Leaking__   
+> __1. Filament Pooling / Leaking__   
 PLA becomes so thin and runny when heated (more so than ABS) that it will seep out of tiny cracks and crevices that ABS won't. What this means is that if you haven't sealed your nozzle off with PFTE tape or high-temp thread seal then you can and should expect liquid PLA to flow 'upwards' thru the threads of your nozzle during your prints. This is the issue with my Budaschnozzle 2.0, the default extruder and nozzle for the Lulzbot TAZ4. 
 
 __Fixing Filament Pooling__  
@@ -31,7 +31,7 @@ __Fixing Filament Pooling__
 
 I personally haven't yet fixed this on my machine. It's not pretty having filament pooling, but it's not really having any kind of negative impact on my prints (that I know of).
 
-2. __Heat Creep & Extruder Clogging__  
+> __2. Heat Creep & Extruder Clogging__  
 Since PLA conducts heat so well what happens is that heat travels up the filament. This is bad. The heat travels up out of the melting chamber and starts to 'cook' the filament above the extruder itself! This is particularly an issue when you are using temperatures too high (like above 185ish) and if you do not have adequate cooling of your extruder above the heating block. So.. what happens when that filament starts to cook is the heated filament starts to expand, and contort, and becomes very hard and brittle. Once this happens your extruder will not be able to push the filament into the melting chamber anymore. It just jams up. At that point, you are stuck - no more printing is going to happen until you open up that extruder assembly and perform surgery and manually get that cooked PLA filament out of there so that you can get back to melting plastic as usual.
 
 __Symptoms of Heat Creep:__
@@ -39,7 +39,7 @@ __Symptoms of Heat Creep:__
 * nothing coming out of extruder when you run the extruder motor (you see the gear turning, but no filament comes out of the nozzle)
 * filament being ground down by the hobbed bolt but not pushed/pulled by it (also note, there could be plastic filament all gummed up in the hobbed bolt too - it helps to clean it out when this happens)
 
-> Fixing Heat Creep
+> __Fixing Heat Creep__  
 I'm still trying to figure that out. Just when I thought I had a permanent fix to this, then I experienced another extruder clog. It's a bummer when you find your 3D Printer has been 'ghost printing' for the past hour, and you realize you will be spending the next 2 hours taking apart and fiddling with the extruder assembly before you can set up a new print. So I haven't PLA proofed the 3D Printer just yet, but I will tell you what I have done so far that has helped the heat creep breakdowns become less numerois.  
 
 1. __STAY LOW-TEMP__  
@@ -56,6 +56,10 @@ I have made one of these myself, it is an easy print and it self-taps with the o
 
 Lastly, now that you have your new fan duct you will want to make sure you keep that fan running all the time!  
 
+__UPDATE (10/26):__ Turns out this fan will probably end up leaving your 'nozzle tip cooling' somewhat underpowered. I ended up seeing worse printing performance when it came to bridging. Also, I noticed that the edges on the side opposite the fan were ending up with a worse quality finish. I was starting to think I needed a fan on the other side focused at the nozzle tip but then decided to go another way with it, and have one fan focused on the nozzle while the 2nd fan was focused entirely on the area above the melting chamber and below the 'cold end' of the extruder. Scrool to bottom of this post for more on adding a 2nd fan.  
+
 That's it. Hopefully with these tips you can keep heat creep to a minimum and keep that printer running!
 
-__UPDATE (9/29):  Unfortunately, my problems persisted and I eventually ended up having to my extruder head replaced by the manufacturer! So far, Lulzbot support has been excellent!__
+__UPDATE (9/29):__  Unfortunately, my problems persisted and I eventually ended up having to my extruder head replaced by the manufacturer! So far, Lulzbot support has been excellent!
+
+__UPDATE (10/26):__ I finally seem to have resolved my issues with heat creep. The new extruder head didn't fix it, but it did help (I had contaiminated the prior one by getting PTFE grinds into the melting chamber). Here's what finally did the trick - [Adding A Second Fan Targeting Heat Creep]({% post_url 2014-10-26-adding-a-second-fan-targeting-heat-creep %})
