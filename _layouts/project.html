@@ -45,7 +45,7 @@ layout: base
     {% if post.product_category == page.project_category %}
         <a href="{{ post.url }}" rel="prefetch"><div style="display: inline-block;margin-left: 10px; margin-right: 10px;">
             
-                <img src="/images/{{ post.product_thumbnail }}" class="product-cap">
+                <img src="/images/products/{{ post.product_thumbnail }}" class="product-cap">
                 <div class="product_name_div">
                     <h4 class="product_name">{{ post.product_name }}</h4>
                 </div>
@@ -69,4 +69,5 @@ layout: base
         </footer>
 {% endif %}
     </div>
+{% include _back_to_top.html %}
 </article>
