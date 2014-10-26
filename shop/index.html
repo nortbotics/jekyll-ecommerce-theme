@@ -1,19 +1,19 @@
 ---
 layout: page
 
-title: "Shop - UNDER CONSTRUCTION"
+title: "Shop - Robot Kits & Components"
 subtitle: "robots and things to make them with"
 cover_image: blog-cover.jpg
 
-excerpt: "Nortbotics Robotics eCommerce Store - Coming Soon!"
+excerpt: "Nortbotics creates and sells robot kits & components for adults and non-engineers."
 ---
 <div style="background: #848484;padding-top:10px;padding-bottom:10px;">
 <section class="index" style="margin-left:0px;margin-right:0px;">
 {% for post in site.products %}
     <div style="display: inline-block;margin-left: 10px; margin-right: 10px;">
-        <a href="{{ post.url }}" rel="prefetch"><img src="/images/{{ post.product_image }}" class="product-cap"></a>
+        <a href="{{ post.url }}" rel="prefetch"><img src="/images/products/{{ post.product_image }}" class="product-cap"></a>
         <a href="{{ post.url }}" rel="prefetch" class="product_name_link">
-        	<div class="product_name_div">
+        	<div class="product_name_div" style="20px;">
             	<h4 class="product_name">{{ post.product_name }}</h4>
         	</div>
         </a>

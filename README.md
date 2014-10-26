@@ -3,8 +3,8 @@ This is the Jekyll theme I use for the NORTBOTICS eCommerce site. Originally bas
 
 See this theme being put to use at [Nortbotics.com](http://www.Nortbotics.com)
 
-## How do you do static eCommerce?
-  We use FoxyCart. So far so good.
+## How do you do cart management on a static site?
+  We use FoxyCart. So far so good.  
 
 ## Installation & Usage
     bundle install

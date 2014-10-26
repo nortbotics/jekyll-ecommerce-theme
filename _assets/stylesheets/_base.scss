@@ -173,9 +173,10 @@ a {
         .product-cap {
         height:200px;
         width:200px;
-        margin-top:0;
+        margin-top:0px;
+        padding-top:0px;
         margin-bottom:0px;
-        z-index: -1;
+        float:left;
     }
         .product_name_div {
             padding-top:0px;

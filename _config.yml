@@ -132,7 +132,7 @@ assets:
 collections:
   products:
     output: true
-    permalink: /shop/:path/
+    permalink: none
     paginate_path: "shop/page:num"
     paginate: 10
   projects:

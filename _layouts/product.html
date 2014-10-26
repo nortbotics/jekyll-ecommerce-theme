@@ -22,31 +22,37 @@ layout: base
 <article>
     <div class="container">
         <section id="product_section">
-            <img src="/images/{{ page.product_image }}" class="product_img">
-            <div class="product_main">
-                <h1 class="product_name_h1" style="margin-bottom:0px;">{{ page.product_name }}</h1>
-                <p><small style="color:#fff">{{ page.product_summary }}</small></p>
-                <p><span style="color:#fff;font-size:120%;" class="product_price">${{ page.product_price }}</span></p>
-                <!-- ADD TO CART BUTTON -->
-                <p>
-                    <form action="https://nortbotics.foxycart.com/cart" method="post">
-                        <input type="hidden" name="name" value='{{ page.product_name }}' />
-                        <input type="hidden" name="price" value='{{ page.product_price }}' />
-                        <input type="hidden" name="image" value='/images/{{ page.product_thumbnail }}'; />
-                        <input id="add_button" type="submit" value="add  to  cart" disabled />
-                    </form>
-                    <b><small style="color:white;background: red;">Out of Stock! Sorry!</small></b>
-                </p>
+            <div style="overflow:none;height:auto;padding-bottom:40px;display:block;">
+                <img src="/images/products/{{ page.product_image }}" class="product_img">
+                <div class="product_main">
+                    <h1 class="product_name_h1" style="margin-bottom:0px;">{{ page.product_name }}</h1>
+                    <h2 class="product_partno">partno: {{ page.product_partno }}</h2>
+                    <p><small style="color:#fff">{{ page.product_summary }}</small></p>
+                      <div style="float:right;margin-left:auto;margin-right:40px;">
+                        <form action="https://nortbotics.foxycart.com/cart" method="post">
+                            <input type="hidden" name="name" value='{{ page.product_name }}' />
+                            <input type="hidden" name="price" value='{{ page.product_price }}' />
+                            <input type="hidden" name="image" value='/images/{{ page.product_thumbnail }}'; />
+                            <input id="add_button" type="submit" value="add  to  cart" style="cursor:pointer;" disabled />
+                        </form>
+                        <b><small style="color:white;background: red;">Out of Stock! Sorry!</small></b><br />
+                    </div>
+                    <p><span style="color:#fff;font-size:180%;" class="product_price">${{ page.product_price }}</span></p>
+                    <!-- ADD TO CART BUTTON -->
+                    <br />
+                </div>
+                <div style='clear:both;'></div>
             </div>
-            <div style='clear:both'></div>
-            <div class="product_info">
+                        <div class="product_info">
                 <div class="product_info_heading"><h2>PRODUCT INFO</h2>
                 </div>
                 <div class="product_details">{{ page.product_description }}
                 </div>
             </div>
             </section>
-            <section><hr>
+            <div style='clear:both'></div>
+            <section>
+            <hr>
             <div>
             <div style="float:left;width:40%;">
                 <div class="product_details_heading"><h2>FEATURES</h2>
@@ -66,8 +72,9 @@ layout: base
                 </ul>
                 </div>
             </div>
-                        <div style='clear:both'></div>
+                        
             </div>
+            <div style='clear:both'></div>
 
                                     <!-- <p>
                         <small>
@@ -101,10 +108,10 @@ layout: base
                 {% endunless %}
             {% endfor %}
             {% endif %}
-                                <hr>
             {% assign related_projects = site.projects.[page.product_category].size %}
             {{ related_projects }}
-            {% if site.projects.size > 0 %}
+            {% if related_projects > 0 %}
+                  <hr>
                 <section class="index" style="margin-left:0px;">
                 <h2>RELATED PROJECTS</h2><style>
                 .projects {

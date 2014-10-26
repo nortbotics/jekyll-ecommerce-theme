@@ -3,17 +3,19 @@
     width:500px;
     background:#404040;
     padding-top:10px;
-    position:absolute;
+    position:relative;
     right:0px;
     padding-right:20px;
     padding-left:20px;
     font-size:1.3em;
+    padding-bottom: 0px;
 }
 .product_img {
     float:left;
     margin-left:0px;
     margin-top:0px;
     padding-top:0px;
+    padding-bottom:10px;
 }
 #product_section {
     margin-left:0px;
@@ -51,4 +53,9 @@
     valign:middle;
     text-align:left;
     padding-left:20px;
+}
+.product_partno
+{
+    color: gray;
+    font-size: 80%;
 }
