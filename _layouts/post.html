@@ -23,6 +23,7 @@ layout: base
                  &mdash;
                 <time pubdate datetime="{{ page.date | date: "%Y-%d-%B" }}" title="{{ page.date | date: "%B %d, %Y" }}">{{ page.date | date: "%B %d, %Y" }}</time>
             </div>
+            <div style="float:left;font-size:80%;background:#000;color:#fff;padding-left:3px;padding-right:3px;margin-bottom:5px;">{{ page.category | upcase }}</div>
         </header>
 
         <section class="index">
@@ -52,7 +53,7 @@ layout: base
                         <small>
                 <h2>MORE BLOGPOSTS</h2>
                 <ul>
-                {% for each in site.related_posts limit:3 %}
+                {% for each in site.related_posts limit:3   %}
                     {% unless each.draft %}
                     <li><a href="{{ each.url }}">{{ each.title }}</a></li>
                     {% endunless %}
