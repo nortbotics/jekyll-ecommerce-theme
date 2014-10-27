@@ -110,7 +110,6 @@ h1, h2 {
 a {
     color:$accent;
     text-decoration:none;
-    transition:all 0.2s ease;
     
     &:hover {
         color:darken($accent, 50%);

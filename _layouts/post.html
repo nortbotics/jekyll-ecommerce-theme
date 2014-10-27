@@ -23,7 +23,7 @@ layout: base
                  &mdash;
                 <time pubdate datetime="{{ page.date | date: "%Y-%d-%B" }}" title="{{ page.date | date: "%B %d, %Y" }}">{{ page.date | date: "%B %d, %Y" }}</time>
             </div>
-            <div class="category_labels">{{ page.category | upcase }}</div>
+            <div class="category_labels">{% categorylink page.category %}{{ page.category | upcase }}{% endcategorylink %}</div>
         </header>
 
         <section class="index">

@@ -79,7 +79,7 @@ title: Robot Blog
 
       {% endif %}
         <div class="blogpost">
-        <div class="category_labels">{% categorylink post.category %}{{ post.category | upcase }}{% endcategorylink %}</div>
+       {% include _category_labels.html %}
         <br /><br />
             <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
             <div class="meta">
