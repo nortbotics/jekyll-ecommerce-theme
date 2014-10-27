@@ -67,8 +67,8 @@ title: Robot Blog
 
       {% endif %}
         <div class="blogpost">
-        <div class="category_labels">{{ post.category | upcase }}</div>
-        <br />
+        <div class="category_labels">{% categorylink post.category %}{{ post.category | upcase }}{% endcategorylink %}</div>
+        <br /><br />
             <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
             <div class="meta">
             {% for author in site.data.authors %}

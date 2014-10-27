@@ -502,8 +502,13 @@ display:block;
     font-size:80%;
     background:#000;
     color:#fff;
-    font-weight: bold;
-    padding-left:3px;
-    padding-right:3px;
+    font-weight: bolder;
+    padding: 10px 10px 10px 10px;
     margin-bottom:5px;
+    a {
+        color:#fff;
+        &:hover {
+            color:#fff;
+        }
+    }
 }

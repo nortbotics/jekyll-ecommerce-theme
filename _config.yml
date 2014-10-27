@@ -141,5 +141,7 @@ collections:
     paginate_path: "projects/page:num"
     paginate: 10
 #
+category_archive:
+  path: /blog/category/
 gems:
   - jemoji
