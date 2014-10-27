@@ -28,9 +28,21 @@ title: Robot Blog
   </ul>
 </div>
 -->
-<br /><h2 style="color:#000;padding-left:40px;">Recent Posts:</h2>
+<br />
+<!-- <div style="float:right;width:300px;padding: 0px 20px 20px 20px;border-left: 2px solid black;"><h2 style="color:#000;padding-left:40px;">Categories:</h2>
+<ul>
+  {% for category in site.categories %}
+    <li>{% categorylink post.category %}
+      {{ category | first }}
+    {% endcategorylink %}
+    </li>
+  {% endfor %}
+  </ul>
+</div>
+-->
+<h2 style="color:#000;padding-left:40px;">Recent Posts:</h2>
 {% if paginator.total_pages > 1 %}
-<div class="pagination">
+<div class="pagination" style="float:left;">
   {% if paginator.previous_page %}
     <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
   {% else %}
